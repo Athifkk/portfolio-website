@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e1fd49b2cf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/Logo.png"  class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contacts">CONTACTS</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i> 
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <!-- adding header files  -->
+        <div class="header-text" >
+            <p>UI/UX Designer</p>
+            <h1>Hi,I'm <span>Athif</span><br> Noor From Kerala </h1>
+
+        </div>
+    </div>
+
+</div>
+<!-------- about section  ----------->
+<div class="about" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/about me.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me </h1>
+                <p>I have Ability to work effectively on a team and deliver projects on time and on budget.
+                    Proficient in HTML, CSS, JavaScript, and familiar with frameworks such as AngularJS</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')" >Experience</p>
+                        <p class="tab-links" onclick="opentab('education')" >Education</p>
+                              
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing web/app interface</li>
+                            <li><span>Web devolopment</span><br>web/app devolopment</li>
+                            <li><span>full stack devolopment</span><br>devolop frontend and backend </li>
+                        </ul>
+                    </div>  
+                    <div class="tab-contents " id="experience">
+                        <ul>
+                            <li><span>2022-2023</span><br>python django Training Luminar Institute</li>
+                            <li><span>2021-2022</span><br>web/app devolopment for campus </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>python django Training Luminar Institute</li>
+                            <li><span>2022</span><br>BCA from calicut univercity</li>
+                            <li><span>2019</span><br>Science </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------------------services--------------------- -->
+<div id="services" id="services">
+    <div class="container">
+        <h1 class="sub-title">MY SERVICES</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web design</h2>
+                <p>We’ll learn about what you are hoping to achieve as a company — short- and long-term — to create a website that works toward your goals.</p>
+                <a href="#">Learn more </a>
+            </div> <div>
+                <i class="fa-solid fa-crop"></i>
+                <h2>UI/UX Design</h2>
+                <p>We’ll learn about what you are hoping to achieve as a company — short- and long-term — to create a website that works toward your goals.</p>
+                <a href="#">Learn more </a>
+            </div> <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App design</h2>
+                <p>We’ll learn about what you are hoping to achieve as a company — short- and long-term — to create a website that works toward your goals.</p>
+                <a href="#">Learn more </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- -------------------------portfolio-------------------------------------- -->
+<div id="portfolio" id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.jpg">
+                <div class="layer">
+                    <h3>Social Meadia App</h3>
+                    <p>Thw app conects you the talented people around the world.
+                        download it from play store
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.jpg">
+                <div class="layer">
+                    <h3>Social Meadia App</h3>
+                    <p>Thw app conects you the talented people around the world.
+                        download it from play store
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.jpg">
+                <div class="layer">
+                    <h3>Social Meadia App</h3>
+                    <p>Thw app conects you the talented people around the world.
+                        download it from play store
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!-- // --------------------------contact---------------------     -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title" id="contacts">Contact me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> contact@ athifnoorkk@gmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen"></i> 7025214201</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/athif-noor-k-k-345b94239/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/athif_noor?igsh=YXc2NGZwZGY3MWQ%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></i></a>
+                    <a href="https://github.com/Athifkk"><i class="fa-brands fa-github"></i></i></a>
+                </div>
+                <a href="images/ATHIF NOOR .K.K (2).pdf"download class="btn btn2">Download Cv</a>
+            </div>
+            <div class="contact-right">
+                <!-- <form name="submit-to-google-sheet">
+                   <input type="text" name="name" placeholder="Your name" required> 
+                   <input type="email" name="email" placeholder="Your email" required> 
+                   <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                   <button type="submit" class="btn btn2">Submit</button>
+                </form> -->
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                <span id="msg"></span>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Athif Noor <i class="fa-regular fa-heart"></i></p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab (tabname){
+        for(tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents) {
+             tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+        
+    }
+
+
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu")
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyqhPx-zay8gkRt7lkARb2nC3Stcc9jU2UtKCuyKBhZbs_Jo1EnNQGBaohHht8xh5T29Q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent succesfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
