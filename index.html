@@ -1,215 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:title" content="Athif Noor - Technical Support Engineer" />
-    <meta property="og:description" content="Welcome to my professional portfolio. I am a Technical Support Engineer based in Dubai, specializing in IT support, troubleshooting, and network configuration." />
-    <<meta property="og:image" content="https://athif-noor-kk.vercel.app/images/linkedin-preview.jpg?v=2" /> />
-    <meta property="og:url" content="https://athif-noor-kk.vercel.app/" />
-    <meta property="og:type" content="website" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athif Noor - Technical Support Engineer</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e1fd49b2cf.js" crossorigin="anonymous"></script>
+    
+    <meta property="og:title" content="Athif Noor - Technical Support Engineer" />
+    <meta property="og:description" content="Technical Support portfolio specializing in L1/L2 Support, Networking, and Troubleshooting." />
+    <meta property="og:image" content="https://athif-noor-kk.vercel.app/images/linkedin-preview.jpg?v=3" />
+    <meta property="og:url" content="https://athif-noor-kk.vercel.app/" />
+
+    <style>
+        /* --- CSS RESET & VARIABLES --- */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            --accent-color: #00d2ff;
+            --text-color: #ffffff;
+            --text-secondary: #b0c4de;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(15, 32, 39, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION (Thumbnail Style) --- */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .tag {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 5px 15px;
+            font-weight: 700;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero-content h2 {
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.primary {
+            background: var(--accent-color);
+            color: #0f2027;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Abstract Circles Background */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+        .c1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+        .c2 { width: 300px; height: 300px; bottom: 50px; left: -100px; }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* --- EXPERIENCE TIMELINE --- */
+        .timeline {
+            border-left: 2px solid rgba(255,255,255,0.2);
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex-basis: 40%;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+        .contact-info i { color: var(--accent-color); }
+
+        .contact-form {
+            flex-basis: 55%;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Add JS toggle for mobile later if needed */
+            }
+            .hero-content h1 { font-size: 40px; }
+            .contact-container { flex-direction: column; }
+            .hero-btns { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/Logo.png" class="logo" alt="Logo">
-            <ul id="sidemenu">
-                <li><a href="#header">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#contacts">CONTACTS</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i> 
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-            <p>Technical Support Engineer</p>
-            <h1>Hi, I'm <span>Athif</span><br> Noor From Dubai</h1>
-        </div>
-    </div>
-</div>
 
-<div class="about" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/about me.png" alt="Athif Noor">
+    <nav>
+        <div class="logo">ATHIF.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        
+        <div class="hero-content">
+            <span class="tag">PORTFOLIO</span>
+            <h1>Hi, I'm <span>Athif Noor</span></h1>
+            <h2>Technical Support Engineer</h2>
+            <p style="color: #b0c4de; margin-bottom: 30px; line-height: 1.6;">
+                IT Professional with 1+ years of experience in diagnosing software, hardware, and network issues. 
+                Based in Dubai and ready to ensure seamless IT operations.
+            </p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary">Hire Me</a>
+                <a href="images/AthifNoor_CV.pdf" download class="btn secondary"><i class="fas fa-download"></i> Download CV</a>
             </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>
-                    I am a dedicated Technical Support Engineer with 1+ years of experience diagnosing and resolving software, hardware, and network issues. 
-                    I specialize in delivering seamless user experiences through L1/L2 support, complex troubleshooting, and effective incident escalation.
-                    With a background in Computer Applications (BCA) and skills in Python, I combine technical expertise with strong problem-solving abilities.
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-desktop"></i>
+                <h3>IT Support (L1/L2)</h3>
+                <p>Diagnosing and resolving hardware/software issues for desktops, laptops, and printers[cite: 16]. Remote desktop assistance and ticketing system management.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking</h3>
+                <p>IP Addressing, Network Configuration, and troubleshooting connectivity issues[cite: 31, 33]. Ensuring minimal downtime for users.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>System Admin</h3>
+                <p>System installation, configuration, and data backup/recovery[cite: 30, 32]. Management of user accounts and access rights.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Web & Python</h3>
+                <p>Basic Python automation and Web Development knowledge (HTML/CSS) to support technical web inquiries[cite: 38].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <p class="timeline-date">2024 - 2025</p>
+                <h3 class="timeline-title">Technical Support Engineer</h3>
+                <h4 style="color: #ccc; margin-bottom: 10px;">Hostsale Tech India (P) Ltd</h4>
+                <p class="timeline-desc">
+                    • Delivered L1/L2 Technical Support for hardware and software issues[cite: 16].<br>
+                    • Managed ticket lifecycle and documented troubleshooting steps in CRM[cite: 17].<br>
+                    • Resolved advanced technical issues and escalated critical incidents[cite: 18, 19].<br>
+                    • Provided network support and configuration assistance[cite: 22].
                 </p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Core Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                </div>
-                
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>IT Support</span><br>L1/L2 Troubleshooting, Hardware & Software Diagnosis</li>
-                        <li><span>Networking</span><br>IP Addressing, System Configuration, Network Support</li>
-                        <li><span>Tools & CRM</span><br>Remote Desktop, Ticketing Systems, MS Office</li>
-                    </ul>
-                </div>  
-                
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2024-2025</span><br><strong>Technical Support Engineer</strong> at Hostsale Tech India<br>
-                        <em>Managed ticket lifecycles, resolved complex technical issues, and provided network support.</em></li>
-                        <li><span>2022-2023</span><br>Python Django Training at Luminar Institute</li>
-                    </ul>
-                </div>
-                
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2019-2022</span><br><strong>Bachelor of Computer Application (BCA)</strong><br>University of Calicut</li>
-                        <li><span>Certifications</span><br>Google IT Support Professional<br>Python Web Development Expert</li>
-                    </ul>
-                </div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-date">2022 - 2023</p>
+                <h3 class="timeline-title">Python Django Training</h3>
+                <h4 style="color: #ccc; margin-bottom: 10px;">Luminar Institute</h4>
+                <p class="timeline-desc">Intensive training in Python web development and logic building.</p>
+            </div>
+             <div class="timeline-item">
+                <p class="timeline-date">2019 - 2022</p>
+                <h3 class="timeline-title">Bachelor of Computer Application (BCA)</h3>
+                <h4 style="color: #ccc; margin-bottom: 10px;">University of Calicut</h4>
+                <p class="timeline-desc">Foundation in Computer Science, Programming, and Networking[cite: 25].</p>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">IT EXPERTISE</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <h2>Technical Support</h2>
-                <p>Diagnosing and resolving hardware (desktops, laptops, printers) and software issues to ensure minimal downtime and high user satisfaction.</p>
-            </div> 
-            <div>
-                <i class="fa-solid fa-network-wired"></i>
-                <h2>Network Support</h2>
-                <p>Configuration of network devices, IP addressing management, and connectivity troubleshooting for seamless operations.</p>
-            </div> 
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web & Automation</h2>
-                <p>Leveraging Python and Web Development skills to automate tasks, manage data entry, and provide technical web support.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">Development Projects</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/work-1.jpg" alt="Portfolio Site">
-                <div class="layer">
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive personal website showcasing technical skills and professional background.</p>
-                    <a href="https://github.com/Athifkk/portfolio-website.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> +971 588135001</p>
+                <p><i class="fas fa-envelope"></i> athifnoorkk@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Dubai, United Arab Emirates</p>
+                <div style="margin-top: 30px;">
+                    <a href="https://www.linkedin.com/in/athif-noor-k-k-345b94239/" style="font-size: 30px; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Athifkk" style="font-size: 30px;"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/work-2.jpg" alt="Audio App">
-                <div class="layer">
-                    <h3>Audio Player App</h3>
-                    <p>An interactive application demonstrating logic and interface design capabilities.</p>
-                    <a href="https://github.com/Athifkk/audio-player-app.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/work-3.jpg" alt="To Do App">
-                <div class="layer">
-                    <h3>To-Do Media App</h3>
-                    <p>A functional task management application focused on user productivity.</p>
-                    <a href="https://github.com/Athifkk/ucoc.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-        </div>
-        <a href="https://github.com/Athifkk" class="btn">See more on GitHub</a>
-    </div>
-</div>
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title" id="contacts">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> athifnoorkk@gmail.com</p>
-                <p><i class="fa-solid fa-mobile-screen"></i> +971 588135001</p>
-                
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/athif-noor-k-k-345b94239/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/athif_noor?igsh=YXc2NGZwZGY3MWQ%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://github.com/Athifkk"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <a href="images/AthifNoor_CV.pdf" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right">
+            
+            <div class="contact-form">
                 <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+                    <button type="submit" class="btn primary" style="border: none; width: 100%;">Send Message</button>
                 </form>
-                <span id="msg"></span>
+                <span id="msg" style="color: #00d2ff; margin-top: 10px; display: block;"></span>
             </div>
         </div>
-        <div class="copyright">
-            <p>Copyright © Athif Noor</p>
-        </div>
-    </div>
-</div>
+    </section>
 
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents) {
-             tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-</script>
-
-<script>
-    var sidemenu = document.getElementById("sidemenu")
-    function openmenu(){
-        sidemenu.style.right = "0"
-    }
-    function closemenu(){
-        sidemenu.style.right = "-200px"
-    }
-</script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyqhPx-zay8gkRt7lkARb2nC3Stcc9jU2UtKCuyKBhZbs_Jo1EnNQGBaohHht8xh5T29Q/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyqhPx-zay8gkRt7lkARb2nC3Stcc9jU2UtKCuyKBhZbs_Jo1EnNQGBaohHht8xh5T29Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          msg.innerHTML = "Sending..."
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => {
+                msg.innerHTML = "Error! Please try again."
+                console.error('Error!', error.message)
+            })
         })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
+    </script>
+
 </body>
 </html>
